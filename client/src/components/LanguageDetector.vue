@@ -34,7 +34,7 @@
                 document.querySelector("textarea").blur();
                 let data = '';
                 let input = this.input;
-                await axios.post('http://localhost:3000/post-text', {
+                await axios.post('/post-text', {
                     text: input
                 })
                     .then(function (response) {
