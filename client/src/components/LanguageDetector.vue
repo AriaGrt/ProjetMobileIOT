@@ -33,7 +33,7 @@
             sendText: async function () {
                 let data = '';
                 let input = this.input;
-                await axios.post('http://localhost:3000/post-text', {
+                await axios.post('http://localhost:8080/post-text', {
                     text: input
                 })
                     .then(function (response) {
