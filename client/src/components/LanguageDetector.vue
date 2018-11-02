@@ -5,9 +5,9 @@
             <div class="ui form">
                 <div class="field">
                     <!--<label>Text</label>-->
-                    <textarea v-model="input"></textarea>
+                    <textarea v-model="input" v-on:keyup.13="sendText"></textarea>
                 </div>
-                <div class="ui primary large fluid button" v-on:click="sendText()">Valider</div>
+                <div class="ui primary large fluid button" v-on:click="sendText">Valider</div>
             </div>
         </div>
         <div id="lang-found" class="ui segment">
@@ -31,6 +31,7 @@
         },
         methods: {
             sendText: async function () {
+                document.querySelector("textarea").blur();
                 let data = '';
                 let input = this.input;
                 await axios.post('http://localhost:3000/post-text', {
