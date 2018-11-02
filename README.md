@@ -1,12 +1,12 @@
-#Description
+# Description
 This project is composed of a nodeJS server (using express framework) and a vuejs front. It also uses the Azure API for language detection.
 
-#Deploying Production
+# Deploying Production
 ```
 cd server && npm run production
 ```
 
-#Development
+# Development
 **Launching client dev server**
 ```
 cd client && npm run serve
