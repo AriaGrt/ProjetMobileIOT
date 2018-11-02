@@ -2,6 +2,7 @@ const https = require('https');
 
 module.exports = {
     postText: async (req, res, next) => {
+        req.body.text = req.body.text || "";
         let accessKey = 'bbfee46e00dc4866a3b62d767494faf6';
         let uri = 'westeurope.api.cognitive.microsoft.com';
         let path = '/text/analytics/v2.0/languages';
@@ -14,7 +15,11 @@ module.exports = {
             response.on('end', function () {
                 let body_ = JSON.parse(body);
                 let body__ = JSON.stringify(body_, null, '  ');
-                res.send(body_.documents[0].detectedLanguages[0].name);
+                if(typeof body_.documents[0] === 'undefined'){
+                    res.send('');
+                }else{
+                    res.send(body_.documents[0].detectedLanguages[0].name);
+                }
             });
             response.on('error', function (e) {
                 console.log('Error: ' + e.message);

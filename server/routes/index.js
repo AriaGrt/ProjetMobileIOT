@@ -5,8 +5,7 @@ const api = require('../controllers/api');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.send('pololo');
-    next();
+    res.render('index');
 });
 
 router.post('/post-text', api.postText);
