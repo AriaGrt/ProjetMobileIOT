@@ -5,7 +5,7 @@
                 <!--<img class="logo" src="favicon.ico">-->
                 Language Emotion
             </a>
-            <div class="ui simple dropdown item">
+            <!--<div class="ui simple dropdown item">
                 Dropdown <i class="dropdown icon"></i>
                 <div class="menu">
                     <a class="item" href="#">Link Item</a>
@@ -22,7 +22,7 @@
                     </div>
                     <a class="item" href="#">Link Item</a>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>
