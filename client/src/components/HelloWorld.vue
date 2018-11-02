@@ -1,4 +1,5 @@
 <template>
+    <p>azazz</p>
     <p>hello world</p>
 </template>
 
