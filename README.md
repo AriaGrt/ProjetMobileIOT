@@ -1,6 +1,20 @@
-Du fromage et du pain
+#Description
+This project is composed of a nodeJS server (using express framework) and a vuejs front. It also uses the Azure API for language detection.
 
+#Deploying Production
+```
+cd server && npm run production
+```
 
+#Development
+**Launching client dev server**
+```
+cd client && npm run serve
+```
+**Launching Nodejs dev server**
+```
+cd server && npm run dev
+```
 # License
 
 ```text
