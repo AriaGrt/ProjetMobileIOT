@@ -10,16 +10,16 @@
                 <div class="ui primary large fluid button" v-on:click="sendText()">Valider</div>
             </div>
         </div>
-        <div class="ui segment">
+        <div id="lang-found" class="ui segment">
             <h2 class="ui header">Langue trouvée</h2>
             <div class="ui segment secondary">{{language}}</div>
         </div>
-
     </div>
 </template>
 
 <script>
     import axios from "axios"
+    import './LanguageDetector.less'
 
     export default {
         name: 'LanguageDetector',
@@ -31,13 +31,14 @@
         },
         methods: {
             sendText: async function () {
-                let data= '';
+                let data = '';
                 let input = this.input;
                 await axios.post('http://localhost:3000/post-text', {
                     text: input
                 })
                     .then(function (response) {
                         data = response.data;
+                        pulseFound();
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -46,18 +47,8 @@
             }
         }
     }
+
+    function pulseFound() {
+        $('#lang-found').transition('pulse', '200ms');
+    }
 </script>
-
-<style scoped lang="less">
-    .main {
-        margin-top: 6em;
-    }
-
-    /* Mobile */
-    @media only screen and (max-width: 767px) {
-        h1 {
-            font-size: 0.5em;
-            color: red;
-        }
-    }
-</style>
